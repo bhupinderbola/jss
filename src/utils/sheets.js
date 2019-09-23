@@ -51,7 +51,8 @@ function getSheetOptions<Theme>(options: Options<Theme>, link: boolean) {
     index: options.index,
     meta,
     classNamePrefix,
-    link,
+    // My hack to let user use link: true
+    link: link || !!(options.sheetOptions && options.sheetOptions.link === true),
     generateId: options.context.generateId
   }
 }
